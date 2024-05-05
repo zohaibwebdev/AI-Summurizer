@@ -7,7 +7,8 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
-        "next/core-web-vitals"
+        "next/core-web-vitals",
+        'plugin:prettier/recommended',
     ],
     'overrides': [
         {
