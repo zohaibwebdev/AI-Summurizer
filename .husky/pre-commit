@@ -1,5 +1,2 @@
 exec 1> /dev/tty
-npm run lint:fix
-npm run format
-git add -A
-
+npm run lint-staged
