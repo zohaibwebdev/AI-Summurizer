@@ -9,7 +9,9 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --write src/.",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pre-commit": "next lint && prettier --write src/. && git add -A ."
+
   },
   "dependencies": {
     "next": "14.2.3",
