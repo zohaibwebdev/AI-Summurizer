@@ -10,15 +10,7 @@
         "lint:fix": "next lint --fix",
         "format": "prettier --write src/.",
         "prepare": "husky",
-        "lint-staged": "lint-staged"
-    },
-    "lint-staged": {
-        "*.{js, jsx,ts,tsx}": [
-            "eslint --quiet --fix"
-        ],
-        "*.{json,js,ts,jsx,tsx,html}": [
-            "prettier --write --ignore-unknown"
-        ]
+        "lint-staged": "lint-staged --config lintstagesrc.js"
     },
     "dependencies": {
         "lint-staged": "^15.2.2",
