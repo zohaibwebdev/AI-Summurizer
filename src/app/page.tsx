@@ -1,5 +1,5 @@
 'use client'
-import Navigation from './navigation/Navigation.component'
+import Navigation from './navigation/Navigation-component'
 
 const page = () => {
     return (
