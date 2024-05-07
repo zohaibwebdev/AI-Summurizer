@@ -1,10 +1,10 @@
-import React from 'react'
+'use client'
+import Navigation from './navigation/navigation.component'
 
 const page = () => {
     return (
-        <div className="text-4xl">
-            <h1>App is initilized</h1>
-            <p>code prettier and husky setup</p>
+        <div className="h-[100vh]">
+            <Navigation />
         </div>
     )
 }
