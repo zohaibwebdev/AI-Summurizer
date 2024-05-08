@@ -1,4 +1,4 @@
-export interface IIconType {
+export interface IconProps {
     height: number
     width: number
 }

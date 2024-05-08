@@ -1,7 +1,7 @@
 import React from 'react'
-import { IIconType } from '../types/icon.types'
+import { IconProps } from '../types/icon.types'
 
-const LogoIcon: React.FC<IIconType> = ({ width = 90, height = 30 }) => {
+const LogoIcon: React.FC<IconProps> = ({ width = 90, height = 30 }) => {
     return (
         <svg
             width={width}
