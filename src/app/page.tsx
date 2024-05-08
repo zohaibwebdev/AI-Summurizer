@@ -7,7 +7,7 @@ const page = () => {
         <div className="h-[100vh] flex flex-col items-center justify-start gap-5 max-w-7xl">
             <Navigation />
             <Header />
-            <CustomInput />
+            <CustomInput type="url" placeholder="Enter Article Link" required />
         </div>
     )
 }
