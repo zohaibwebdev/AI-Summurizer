@@ -1,11 +1,11 @@
 import React from 'react'
-import { IIconType } from '../types/icon.type'
+import { IIconType } from '../types/icon.types'
 
-const LogoIcon: React.FC<IIconType> = ({ width = '90', height = '30' }) => {
+const LogoIcon: React.FC<IIconType> = ({ width = 90, height = 30 }) => {
     return (
         <svg
-            width={+width}
-            height={+height}
+            width={width}
+            height={height}
             viewBox="0 0 300 101.4910110983811"
             className="css-1j8o68f"
             version="1.1"
