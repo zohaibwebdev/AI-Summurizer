@@ -7,7 +7,7 @@ const page = () => {
         <div className="h-[100vh] flex flex-col items-center justify-start gap-5 max-w-7xl">
             <Navigation />
             <Header />
-            <CustomButton type="primary" value="submit" />
+            <CustomButton type="secondary" value="submit" />
         </div>
     )
 }
