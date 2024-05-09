@@ -7,6 +7,6 @@ export interface InputPropsTypes {
     name?: string
     className?: string
     changeEvent?: (e: React.ChangeEvent<HTMLInputElement>) => void
-    value?: string | number
+    defaultValue?: string | number
     errorMessage?: string
 }

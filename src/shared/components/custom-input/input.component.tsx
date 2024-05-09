@@ -8,7 +8,7 @@ const CustomInput: FC<InputPropsTypes> = ({
     required,
     errorMessage,
     name,
-    value,
+    defaultValue,
     className,
     changeEvent,
     readonly,
@@ -22,7 +22,7 @@ const CustomInput: FC<InputPropsTypes> = ({
             <input
                 name={name}
                 type={type}
-                value={value}
+                defaultValue={defaultValue}
                 placeholder={placeholder}
                 required={required}
                 onChange={handleChange}
