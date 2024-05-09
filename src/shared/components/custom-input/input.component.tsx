@@ -1,22 +1,35 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import { InputPropsTypes } from '@/shared/types/input.types'
 
-const CustomInput: FC<InputPropsTypes> = ({ label, type, placeholder, required }) => {
-    const [value, setValue] = useState('')
+const CustomInput: FC<InputPropsTypes> = ({
+    label,
+    type,
+    placeholder,
+    required,
+    errorMessage,
+    name,
+    value,
+    className,
+    changeEvent,
+    readonly,
+}) => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value)
+        changeEvent?.(e)
     }
     return (
         <div>
             {label && <label>{label}:</label>}
             <input
+                name={name}
                 type={type}
                 value={value}
                 placeholder={placeholder}
                 required={required}
                 onChange={handleChange}
-                className="outline-none border border-gray-500 text-xl p-1 rounded-md"
+                className={className}
+                readOnly={readonly}
             />
+            {errorMessage && <div className="text-sm text-red-600 font-bold">{errorMessage}</div>}
         </div>
     )
 }
