@@ -7,7 +7,7 @@ const CustomButton: FC<CustomButtonProps> = ({ value, onClick, type, styles = {}
     return (
         <button
             style={{ ...styles }}
-            className={`px-3 py-2 border rounded-md text-lg ${type == 'secondary' ? 'bg-transparent border-gray-700 text-gray-700' : type == 'primary' ? 'bg-gray-700 text-white' : 'bg-transparent text-black border-b border-red-500'} ${classNames}`}
+            className={`px-3 py-2 border rounded-md text-lg ${type == 'secondary' ? 'bg-transparent border-gray-700 text-gray-700' : type == 'primary' ? 'bg-gray-700 text-white' : type == 'another' ? 'text-white bg-[#3948db]' : 'bg-transparent text-black border-b border-red-500'} ${classNames}`}
             onClick={() => onClick?.()}
         >
             {value}
