@@ -12,11 +12,5 @@ export enum CustomButtonTypes {
     PRIMARY = 'PRIMARY',
     SECONDARY = 'SECONDARY',
     LIGHT = 'LIGHT',
-    ANOTHER = 'ANOTHER',
+    BLUE = 'BLUE',
 }
-
-// export enum CustomButtonClasses {
-//     'primary' = 'bg-gray-700 text-white',
-//     'secondary' = 'bg-transparent border-gray-700 text-gray-700',
-//     'another' = 'text-white bg-[#3948db]',
-// }
