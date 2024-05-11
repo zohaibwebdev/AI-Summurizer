@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconProps } from '../types/icon.types'
 
-const LinkIcon: React.FC<IconProps> = ({ width = 90, height = 90 }) => {
+const LinkIcon: React.FC<IconProps> = ({ width = 120, height = 40 }) => {
     return (
         <svg
             className="absolute left-0 my-2 ml-3 w-5"
