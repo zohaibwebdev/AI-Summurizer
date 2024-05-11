@@ -17,6 +17,7 @@ const CustomInput: FC<InputPropsTypes> = ({
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         changeEvent?.(e)
     }
+
     return (
         <div className="flex flex-col gap-1 items-center">
             {label && <label className={labelClasses}>{label}:</label>}

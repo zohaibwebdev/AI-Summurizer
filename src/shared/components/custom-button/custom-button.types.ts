@@ -1,4 +1,5 @@
 import { CSSProperties, PropsWithChildren } from 'react'
+
 export interface CustomButtonProps extends PropsWithChildren {
     onClick?: () => void
     type: CustomButtonTypes
