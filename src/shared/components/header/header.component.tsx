@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <header>
+        <header className="max-w-screen-md mx-auto mt-14">
             <h1 className="text-4xl capitalize text-center mb-6 text-gray-800 font-bold">
                 Summarize Articles with <br className="max-md:hidden" />
                 <span className="bg-gradient-to-r from-orange-600 via-purple-800 to-indigo-400 bg-clip-text text-transparent">
