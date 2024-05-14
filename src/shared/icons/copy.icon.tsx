@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { IconProps } from '../types/icon.types'
 
-const CopyIcon: FC<IconProps> = ({ width = 14, height = 14, onClick }) => {
+const CopyIcon: FC<IconProps> = ({ width = 14, height = 14 }) => {
     return (
         <svg
             fill="none"
@@ -13,7 +13,6 @@ const CopyIcon: FC<IconProps> = ({ width = 14, height = 14, onClick }) => {
             viewBox="0 0 24 24"
             width={width}
             height={height}
-            onClick={() => onClick?.()}
             version="1.1"
             id="svg4"
             xmlns="http://www.w3.org/2000/svg"
