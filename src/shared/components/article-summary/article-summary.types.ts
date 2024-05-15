@@ -7,3 +7,9 @@ export interface ArticleSummaryDetailProps {
     summary?: string
     error?: string
 }
+
+export interface ArticleSummaryFormProps {
+    url: string
+    setUrl: (url: string) => void
+    FetchDataFromApi: (url: string) => Promise<void>
+}
