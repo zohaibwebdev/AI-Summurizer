@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
-import { HistoryProps } from '../summary.types'
+import { HistoryProps } from '../article-summary.types'
 import CopyIcon from '@/shared/icons/copy.icon'
 import TickIcon from '@/shared/icons/tick.icon'
 
-const SummaryHistory: FC<HistoryProps> = ({ history }) => {
+const ArticleSummaryHistory: FC<HistoryProps> = ({ history }) => {
     const [copy, setCopy] = useState('')
     const handleCopy = (url: string) => {
         setCopy(url)
@@ -31,4 +31,4 @@ const SummaryHistory: FC<HistoryProps> = ({ history }) => {
     )
 }
 
-export default SummaryHistory
+export default ArticleSummaryHistory

@@ -7,7 +7,6 @@ export interface CustomButtonProps extends PropsWithChildren {
     classNames?: string
     disable?: boolean
     hidden?: boolean
-    buttonType?: 'submit' | 'reset' | 'button'
 }
 
 export enum CustomButtonTypes {
