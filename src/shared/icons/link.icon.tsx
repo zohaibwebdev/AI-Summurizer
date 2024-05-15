@@ -4,7 +4,7 @@ import { IconProps } from '../types/icon.types'
 const LinkIcon: React.FC<IconProps> = ({ width = 120, height = 40 }) => {
     return (
         <svg
-            className="absolute left-0 my-2 ml-3 w-5"
+            className="absolute left-0 my-1 ml-3 w-5"
             fill="none"
             shapeRendering="geometricPrecision"
             stroke="currentColor"
