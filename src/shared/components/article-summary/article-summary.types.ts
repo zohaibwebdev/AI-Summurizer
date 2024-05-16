@@ -1,5 +1,10 @@
 export interface HistoryProps {
-    history: Array<string>
+    history: Array<HistoryObject>
+}
+
+interface HistoryObject {
+    url: string
+    summary: string
 }
 
 export interface ArticleSummaryDetailProps {

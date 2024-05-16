@@ -3,14 +3,13 @@ import ArticleSummaryForm from './article-summary-form/article-summary-form.comp
 import ArticleSummaryHistory from './article-summary-history/article-summary-history.component'
 import ArticleSummaryDetail from './article-summary-detail/article-summary-detail.component'
 
-const history = ['www.google.com', 'www.facebook.com', 'www.awais.com']
 const loading = false
 const summary = 'summary'
 const errorMessage = 'error'
 
 const ArticleSummary = () => {
     const [url, setUrl] = useState('')
-
+    const [history] = useState([{ url: '', summary: '' }])
     const fetchDataFromApi = async (url: string) => {
         console.log(url)
         // All fetch logic here
