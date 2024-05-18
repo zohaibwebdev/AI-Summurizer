@@ -16,5 +16,5 @@ export interface ArticleSummaryDetailProps {
 export interface ArticleSummaryFormProps {
     url: string
     setUrl: (url: string) => void
-    FetchDataFromApi: (url: string) => Promise<void>
+    FetchDataFromApi: () => Promise<void>
 }
