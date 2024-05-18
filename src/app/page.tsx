@@ -1,8 +1,8 @@
 'use client'
 
-import ArticleSummary from '@/shared/components/article-summary/article-summary.component'
 import Navigation from '../shared/components/navigation/navigation.component'
 import Header from '@/shared/components/header/header.component'
+import ArticleSummary from '@/shared/components/article-summary/article-summary.component'
 
 const HomePage = () => {
     return (
