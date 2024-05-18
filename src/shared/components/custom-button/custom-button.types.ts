@@ -14,4 +14,5 @@ export enum CustomButtonTypes {
     SECONDARY = 'SECONDARY',
     LIGHT = 'LIGHT',
     BLUE = 'BLUE',
+    SUBMIT = 'SUBMIT',
 }

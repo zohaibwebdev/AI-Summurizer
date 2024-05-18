@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { CustomButtonProps } from './custom-button.types'
-import { customButtonStyles, buttonStyles } from './custom-button.styles'
+import { customButtonStyles } from './custom-button.styles'
 
 const CustomButton: FC<CustomButtonProps> = ({ onClick, type, styles, classNames, children, hidden, disable }) => {
     if (hidden) {
@@ -10,7 +10,7 @@ const CustomButton: FC<CustomButtonProps> = ({ onClick, type, styles, classNames
         <button
             disabled={disable}
             style={styles}
-            className={`${buttonStyles} ${customButtonStyles[type]} ${classNames}`}
+            className={`${customButtonStyles[type]} ${classNames}`}
             onClick={() => onClick?.()}
         >
             {children}
