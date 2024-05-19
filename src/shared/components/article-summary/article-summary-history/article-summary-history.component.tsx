@@ -1,21 +1,16 @@
-import { FC, useState } from 'react'
-import { HistoryProps } from '../article-summary.types'
+import { useState } from 'react'
 import CopyIcon from '@/shared/icons/copy.icon'
 import TickIcon from '@/shared/icons/tick.icon'
-import ArticleSummaryDetail from '../article-summary-detail/article-summary-detail.component'
+import { useArticleContext } from '@/context/article-context'
 
-const ArticleSummaryHistory: FC<HistoryProps> = ({ history }) => {
+const ArticleSummaryHistory = () => {
+    const { history, setSummary } = useArticleContext()
     const [copy, setCopy] = useState('')
-    const [summaryCheck, setSummaryCheck] = useState(false)
 
     const handleCopy = (url: string) => {
         setCopy(url)
         navigator.clipboard.writeText(url)
         setTimeout(() => setCopy(''), 3000)
-    }
-
-    const handleSummary = () => {
-        setSummaryCheck(true)
     }
 
     return (
@@ -30,13 +25,12 @@ const ArticleSummaryHistory: FC<HistoryProps> = ({ history }) => {
                             {copy === item.url ? <TickIcon /> : <CopyIcon />}
                         </div>
                         <p
-                            onClick={handleSummary}
+                            onClick={() => setSummary(item.summary)}
                             className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate"
                         >
                             {item.url}
                         </p>
                     </div>
-                    {summaryCheck && <ArticleSummaryDetail summary={item.summary} />}
                 </div>
             ))}
         </div>
