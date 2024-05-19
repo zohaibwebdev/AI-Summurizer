@@ -5,14 +5,13 @@ import CustomButton from '../../custom-button/custom-button.component'
 import { CustomButtonTypes } from '../../custom-button/custom-button.types'
 import { ArticleSummaryFormProps } from '../article-summary.types'
 
-const ArticleSummaryForm: FC<ArticleSummaryFormProps> = ({ setUrl, FetchDataFromApi }) => {
+const ArticleSummaryForm: FC<ArticleSummaryFormProps> = ({ setUrl, FetchData }) => {
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const url: string = e.target.value // Explicitly type 'newUrl' as string
-        setUrl(url)
+        const inputUrl: string = e.target.value
+        setUrl(inputUrl)
     }
-
     const handleSubmit = async () => {
-        await FetchDataFromApi()
+        await FetchData()
     }
     return (
         <div className="relative">
