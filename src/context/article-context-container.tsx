@@ -13,37 +13,28 @@ const ArticleSummaryContextProvider: FC<PropsWithChildren> = ({ children }) => {
                 return {
                     ...prev,
                     loading: true,
+                    currentHistory: -1,
                 }
             })
             const { summary = '', message = '' } = await ArtilceSummaryService.getSummary(inputUrl)
-            if (summary) {
-                setState(function (prevState) {
-                    return {
-                        ...prevState,
-                        url: inputUrl,
-                        summary,
-                        history: [
-                            ...prevState.history,
-                            {
-                                url: inputUrl,
-                                summary,
-                            },
-                        ],
-                        loading: false,
-                    }
-                })
-            }
 
-            if (message) {
-                setState(function (prevState) {
-                    return {
-                        ...prevState,
-                        url: inputUrl,
-                        loading: false,
-                        error: message,
-                    }
-                })
-            }
+            setState(function (prevState) {
+                return {
+                    ...prevState,
+                    url: inputUrl,
+                    error: message,
+                    loading: false,
+                    history: [
+                        ...prevState.history,
+
+                        {
+                            url: inputUrl,
+                            summary,
+                        },
+                    ],
+                    currentHistory: prevState.history.length,
+                }
+            })
         } catch (error) {
             setState((prev) => ({
                 ...prev,
@@ -53,16 +44,15 @@ const ArticleSummaryContextProvider: FC<PropsWithChildren> = ({ children }) => {
         }
     }
 
-    const setSummary = (summary: string) => {
+    const setSummary = (currentHistory: number) => {
         setState(function (prev) {
             return {
                 ...prev,
-                summary,
+                currentHistory,
             }
         })
     }
 
-    console.log(state.summary)
     return <ArticleContextProvider value={{ ...state, getSummary, setSummary }}>{children}</ArticleContextProvider>
 }
 

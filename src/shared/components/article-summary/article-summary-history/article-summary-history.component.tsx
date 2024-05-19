@@ -15,7 +15,7 @@ const ArticleSummaryHistory = () => {
 
     return (
         <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
-            {history.reverse().map((item) => (
+            {history.reverse().map((item, index) => (
                 <div key={item.url} className="relative">
                     <div className="p-3 flex justify-start items-center flex-row bg-white border border-gray-200 gap-3 rounded-lg cursor-pointer">
                         <div
@@ -25,7 +25,7 @@ const ArticleSummaryHistory = () => {
                             {copy === item.url ? <TickIcon /> : <CopyIcon />}
                         </div>
                         <p
-                            onClick={() => setSummary(item.summary)}
+                            onClick={() => setSummary(index)}
                             className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate"
                         >
                             {item.url}

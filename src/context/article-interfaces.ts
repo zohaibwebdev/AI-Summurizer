@@ -1,10 +1,10 @@
 export interface IArticleSummaryContext {
     loading: boolean
     error: string
-    summary: string
+    currentHistory: number
     history: Array<History>
     getSummary: (url: string) => Promise<void>
-    setSummary: (summary: string) => void
+    setSummary: (index: number) => void
 }
 
 interface History {
@@ -13,7 +13,7 @@ interface History {
 }
 
 export const defaultValuesArticleContext: IArticleSummaryContext = {
-    summary: '',
+    currentHistory: -1,
     history: [],
     getSummary: function (): Promise<void> {
         throw new Error('Function not implemented.')

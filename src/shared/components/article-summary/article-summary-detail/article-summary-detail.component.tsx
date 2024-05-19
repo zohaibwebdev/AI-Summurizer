@@ -4,7 +4,9 @@ import { useArticleContext } from '@/context/article-context'
 import ArticleSummaryLoader from '../article-summary-loader/article-summary-loader'
 
 const ArticleSummaryDetail: FC<ArticleSummaryDetailProps> = () => {
-    const { error, summary, loading } = useArticleContext()
+    const { error, history, loading, currentHistory } = useArticleContext()
+    const summary = history[currentHistory]?.summary
+
     return (
         <div className="my-10 max-w-full flex justify-center items-center">
             {error && (
