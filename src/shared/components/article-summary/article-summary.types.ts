@@ -1,5 +1,6 @@
 export interface HistoryProps {
     history: Array<HistoryObject>
+    setSummary: (summary: string) => void
 }
 
 interface HistoryObject {
@@ -16,5 +17,10 @@ export interface ArticleSummaryDetailProps {
 export interface ArticleSummaryFormProps {
     url: string
     setUrl: (url: string) => void
-    FetchDataFromApi: () => Promise<void>
+    FetchData: () => Promise<void>
+}
+
+export interface IHistory {
+    url: string
+    summary: string
 }

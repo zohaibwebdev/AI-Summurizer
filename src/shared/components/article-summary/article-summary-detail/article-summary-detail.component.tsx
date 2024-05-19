@@ -1,11 +1,9 @@
 import React, { FC } from 'react'
 import { ArticleSummaryDetailProps } from '../article-summary.types'
-import LoaderIcon from '@/shared/icons/loader.icon'
 
-const ArticleSummaryDetail: FC<ArticleSummaryDetailProps> = ({ loading, summary, error }) => {
+const ArticleSummaryDetail: FC<ArticleSummaryDetailProps> = ({ summary, error }) => {
     return (
         <div className="my-10 max-w-full flex justify-center items-center">
-            {loading && <LoaderIcon />}
             {error && <p className="font-inter font-bold text-black text-center">{error}</p>}
 
             {summary && (
