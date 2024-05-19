@@ -29,9 +29,10 @@ const ArticleSummary = () => {
                     },
                 ]
             })
-            setLoading(false)
         } catch (error) {
             setErrorMessage((error as Error).message)
+        } finally {
+            setLoading(false)
         }
     }
 
