@@ -1,19 +1,22 @@
-import React, { FC } from 'react'
+import React, { useState } from 'react'
 import CustomInput from '../../custom-input/custom-input.component'
 import LinkIcon from '@/shared/icons/link.icon'
 import CustomButton from '../../custom-button/custom-button.component'
 import { CustomButtonTypes } from '../../custom-button/custom-button.types'
-import { ArticleSummaryFormProps } from '../article-summary.types'
+import { useArticleContext } from '@/context/article-context'
 
-const ArticleSummaryForm: FC<ArticleSummaryFormProps> = ({ setUrl, FetchDataFromApi }) => {
+const ArticleSummaryForm = () => {
+    const [inputUrl, setInputUrl] = useState<string>('')
+    const { getSummary } = useArticleContext()
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const url: string = e.target.value // Explicitly type 'newUrl' as string
-        setUrl(url)
+        const input = e.target.value
+        setInputUrl(input)
     }
 
     const handleSubmit = async () => {
-        await FetchDataFromApi()
+        await getSummary(inputUrl)
     }
+
     return (
         <div className="relative">
             <LinkIcon />

@@ -1,13 +1,19 @@
 import React, { FC } from 'react'
 import { ArticleSummaryDetailProps } from '../article-summary.types'
-import LoaderIcon from '@/shared/icons/loader.icon'
+import { useArticleContext } from '@/context/article-context'
+import ArticleSummaryLoader from '../article-summary-loader/article-summary-loader'
 
-const ArticleSummaryDetail: FC<ArticleSummaryDetailProps> = ({ loading, summary, error }) => {
+const ArticleSummaryDetail: FC<ArticleSummaryDetailProps> = () => {
+    const { error, summary, loading } = useArticleContext()
     return (
         <div className="my-10 max-w-full flex justify-center items-center">
-            {loading && <LoaderIcon />}
-            {error && <p className="font-inter font-bold text-black text-center">{error}</p>}
-
+            {error && (
+                <div className="font-inter font-bold  text-center text-red-700">
+                    <p>Error</p>
+                    <p>{error}</p>
+                </div>
+            )}
+            {loading && <ArticleSummaryLoader />}
             {summary && (
                 <div className="flex flex-col gap-3">
                     <h2 className="font-satoshi font-bold text-gray-600 text-xl">
