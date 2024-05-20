@@ -2,7 +2,7 @@ import { httpClient } from './http-client'
 
 const API = 'https://article-extractor-and-summarizer.p.rapidapi.com'
 const headers = {
-    'X-RapidAPI-Key': '77f6592570msh4b0281d5ec32d52p19edc7jsnb5264e06ebe4',
+    'X-RapidAPI-Key': '49b9c8c25amsh8c31d47f34f8e0cp1079f6jsnb45d5193ef41',
     'X-RapidAPI-Host': 'article-extractor-and-summarizer.p.rapidapi.com',
 }
 enum SummurizeEndpoints {
