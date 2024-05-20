@@ -1,13 +1,23 @@
 import React, { FC } from 'react'
 import { ArticleSummaryDetailProps } from '../article-summary.types'
-import LoaderIcon from '@/shared/icons/loader.icon'
+import Loader from '../../loader/loader.component'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/redux/store'
 
-const ArticleSummaryDetail: FC<ArticleSummaryDetailProps> = ({ loading, summary, error }) => {
+const ArticleSummaryDetail: FC<ArticleSummaryDetailProps> = () => {
+    const { error, history, loading, currentHistory } = useSelector((state: RootState) => state.summary)
+
+    const summary = history[currentHistory]?.summary
+
     return (
         <div className="my-10 max-w-full flex justify-center items-center">
-            {loading && <LoaderIcon />}
-            {error && <p className="font-inter font-bold text-black text-center">{error}</p>}
-
+            {error && (
+                <div className="font-inter font-bold  text-center text-red-700">
+                    <p>Error</p>
+                    <p>{error}</p>
+                </div>
+            )}
+            {loading && <Loader />}
             {summary && (
                 <div className="flex flex-col gap-3">
                     <h2 className="font-satoshi font-bold text-gray-600 text-xl">

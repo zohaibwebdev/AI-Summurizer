@@ -1,12 +1,14 @@
-import { FC, useState } from 'react'
-import { HistoryProps } from '../article-summary.types'
+import { useState } from 'react'
 import CopyIcon from '@/shared/icons/copy.icon'
 import TickIcon from '@/shared/icons/tick.icon'
-import ArticleSummaryDetail from '../article-summary-detail/article-summary-detail.component'
+import { AppDispatch, RootState } from '@/redux/store'
+import { useDispatch, useSelector } from 'react-redux'
+import { setSummary } from '@/redux/summary-slice'
 
-const ArticleSummaryHistory: FC<HistoryProps> = ({ history }) => {
+const ArticleSummaryHistory = () => {
     const [copy, setCopy] = useState('')
-    const [summaryCheck, setSummaryCheck] = useState(false)
+    const dispatch: AppDispatch = useDispatch()
+    const { history } = useSelector((state: RootState) => state.summary)
 
     const handleCopy = (url: string) => {
         setCopy(url)
@@ -14,13 +16,9 @@ const ArticleSummaryHistory: FC<HistoryProps> = ({ history }) => {
         setTimeout(() => setCopy(''), 3000)
     }
 
-    const handleSummary = () => {
-        setSummaryCheck(true)
-    }
-
     return (
         <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
-            {history.reverse().map((item) => (
+            {history.reverse().map((item, index) => (
                 <div key={item.url} className="relative">
                     <div className="p-3 flex justify-start items-center flex-row bg-white border border-gray-200 gap-3 rounded-lg cursor-pointer">
                         <div
@@ -30,13 +28,12 @@ const ArticleSummaryHistory: FC<HistoryProps> = ({ history }) => {
                             {copy === item.url ? <TickIcon /> : <CopyIcon />}
                         </div>
                         <p
-                            onClick={handleSummary}
+                            onClick={() => dispatch(setSummary(index))}
                             className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate"
                         >
                             {item.url}
                         </p>
                     </div>
-                    {summaryCheck && <ArticleSummaryDetail summary={item.summary} />}
                 </div>
             ))}
         </div>
